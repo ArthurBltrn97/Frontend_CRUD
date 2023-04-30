@@ -1,0 +1,40 @@
+<div class="jumbotron py-3">
+    
+    <h1 class="display-4 text-center">Examen CRUD</h1>
+
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-productosform></app-productosform>
+    </div>
+    <div class="col-md-6">
+        <span>Lista de Productos</span>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Estatus</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of service.list">
+                    <td>{{prod.id}}</td>
+                    <td>{{prod.nombre}}</td>
+                    <td>{{prod.estatus}}</td>
+                    <td>
+                        <a asp-action="Edit" class="btn btn-warning" (click)="populateForm(prod)">Actualizar</a> |
+                        <a asp-action="Details" class="btn btn-danger" (click)="onDelete(prod.id)">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer b-fxhl98hawm="" class="border-top footer text-muted">
+    <div b-fxhl98hawm="" class="container">
+        © 2023 - Examen creado por Arturo Beltrán - <a href="https://www.linkedin.com/in/arturo-beltran-a1717a23b/">Perfil</a>
+    </div>
+</footer>
